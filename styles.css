@@ -6,6 +6,10 @@
     --bgColor: #17202a;
 }
 
+* {
+    font-family: var(--bodyFont);
+}
+
 body {
     background-color: var(--bgColor);
     color: white;
@@ -52,12 +56,141 @@ body {
     color: lightgrey;
     font-weight: bold;
 }
-#addSong:hover, #addSong:active {
+#addSong:hover, #addSong:focus {
     cursor: pointer;
     box-shadow: 0px 0px 10px #7e57c2;
     background-color: #9575cd;
 }
 
+#addModal {
+    position: absolute;
+    display: fixed;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    left: 0;
+    top: 0;
+    background-color: #0e141a;
+    display: none;
+    opacity: 0;
+    transition: all 1s;
+}
+#addModal #close {
+    position: absolute;
+    right: 5em;
+    top: 1em;
+    background-color: #ef5350;
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 100%;
+    font-size: 1em;
+    width: 1.5em;
+    height: 1.5em;
+}
+@media only screen and (max-width: 400px) {
+    #addModal #close {
+        right: 1em;
+        top: 1em;
+    }
+}
+#addModal #close:hover {
+    cursor: pointer;
+}
+#addModal #content {
+    width: fit-content;
+    height: fit-content;
+    padding: 2em;
+    background-color: #17202a;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    border-radius: 20px;
+}
+@media only screen and (max-width: 400px) {
+    #addModal #content {
+        height: 75vh;
+    }
+}
+#addModal #content #search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2em;
+    margin-left: -1.3em;
+}
+#addModal #content #search img {
+    width: 0.75em;
+    height: 0.75em;
+    padding: 0.35em;
+    border-radius: 100%;
+    background-color: #9575cd;
+}
+#addModal #content #search img:hover, #addModal #content #search img:focus {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #9575cd;
+}
+#addModal #content #search input {
+    margin: 0;
+    margin-left: 0.5em;
+    background-color: #121921;
+    border: none;
+    outline: none;
+    padding: 0.5em;
+    border-radius: 10px;
+    font-size: 0.7em;
+    color: white;
+}
+#addModal #content #results {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+#addModal #content #results div {
+    display: flex;
+    flex-direction: row;
+    height: 1em;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+#addModal #content #results div button {
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 1em;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    background-color: #7e57c2;
+    color: lightgrey;
+    font-weight: bold;
+}
+#addModal #content #results div button:hover, #addModal #content #results div button:focus {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #7e57c2;
+    background-color: #9575cd;
+}
+@media only screen and (max-width: 400px) {
+    #addModal #content #results div {
+        margin-bottom: 1.5em;
+    }
+}
+#addModal #content #results div img {
+    width: 2em;
+    height: 2em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+@media only screen and (max-width: 400px) {
+    #addModal #content #results div img {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
 
 #main {
     display: flex;
