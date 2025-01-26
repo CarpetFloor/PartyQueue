@@ -1,0 +1,35 @@
+:root {
+    --bodyFont: 
+}
+
+body {
+    background-color: #17202a;
+    color: white;
+    font-size: 20px;
+}
+
+#top {
+    display: flex;
+    flex-direction: row;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+}
+
+#bottom {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+}
+
+.track {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.track p {
+    margin-left: 1em;
+}

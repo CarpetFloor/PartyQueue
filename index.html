@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="/socket.io/socket.io.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Party Queue</title>
+</head>
+<body>
+    <div id="top">
+        <p>Name</p>
+        <p>'s Party</p>
+    </div>
+
+    <div id="main">
+        <div class="track">
+            <img src="temp.png">
+            <p>Track Title</p>
+        </div>
+    </div>
+
+    
+    <div id="bottom">
+        <div class="track">
+            <img src="temp.png">
+            <p>Track Title</p>
+        </div>
+
+        <div id="playingProgressContainer">
+            <div></div>
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>
