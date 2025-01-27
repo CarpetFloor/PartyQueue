@@ -17,8 +17,8 @@ searchButton.addEventListener("click", () => {
     searchResultsContainer.style.display = "flex";
 })
 
-let addSongButton = document.querySelector("#addSong");
-addSongButton.addEventListener("click", () => {
+let addSongContainer = document.querySelector("#addSongContainer");
+addSongContainer.addEventListener("click", () => {
     searchResultsContainer.style.display = "none";    
     addModal.style.display = "flex";  
     addModalAnimation.animate();

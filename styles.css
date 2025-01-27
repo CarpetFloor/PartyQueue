@@ -17,8 +17,9 @@ body {
     font-family: var(--bodyFont);
     overflow-x: hidden;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     body {
+        overflow-x: hidden;
         font-size: 18px;
     }
 }
@@ -30,6 +31,12 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+@media only screen and (max-width: 450px) {
+    #mainContainer {
+        overflow-x: hidden;
+        width: 70vw;
+    }
+}
 
 #top {
     display: flex;
@@ -38,14 +45,22 @@ body {
     font-family: var(--headerFont);
     color: #9575cd;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     #top {
-        font-size: 32px;
+        font-size: 9vw;
         margin-bottom: -0.5em;
     }
 }
 
-#addSong {
+#addSongContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #7e57c2;
+    width: fit-content;
+    border-radius: 20px;
+}
+#addSongContainer #addSong {
     width: 1.35em;
     height: 1.35em;
     font-size: 1.35em;
@@ -55,11 +70,27 @@ body {
     background-color: #7e57c2;
     color: lightgrey;
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
-#addSong:hover, #addSong:focus {
+#addSongContainer:hover, #addSongContainer:focus  {
     cursor: pointer;
     box-shadow: 0px 0px 10px #7e57c2;
     background-color: #9575cd;
+}
+#addSongContainer:hover >  #addSong {
+    background-color: #9575cd;
+    cursor: pointer;
+}
+#addSongContainer p {
+    margin: 0;
+    margin-left: -1.5em;
+    padding: 0.15em;
+    padding-left: 1.55em;
+    padding-right: 0.5em;
+    border-radius: 20px;
 }
 
 #addModal {
@@ -88,7 +119,7 @@ body {
     width: 1.5em;
     height: 1.5em;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     #addModal #close {
         right: 1em;
         top: 1em;
@@ -107,7 +138,7 @@ body {
     margin-top: 2em;
     border-radius: 20px;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     #addModal #content {
         height: 75vh;
     }
@@ -173,7 +204,7 @@ body {
     box-shadow: 0px 0px 10px #7e57c2;
     background-color: #9575cd;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     #addModal #content #results div {
         margin-bottom: 1.5em;
     }
@@ -184,7 +215,7 @@ body {
     margin-left: 0.5em;
     margin-right: 0.5em;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     #addModal #content #results div img {
         margin-left: 1em;
         margin-right: 1em;
@@ -206,6 +237,12 @@ body {
     align-items: center;
     background-color: var(--bgColor);
     box-shadow: 0px 0px 30px #0d1218;
+}
+@media only screen and (max-width: 450px) {
+    #bottom {
+        bottom: 0;
+        overflow-x: hidden;
+    }
 }
 #bottom #playingProgressContainer {
     align-items: center;
