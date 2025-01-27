@@ -73,7 +73,6 @@ body {
     background-color: #0e141a;
     display: none;
     opacity: 0;
-    transition: all 1s;
 }
 #addModal #close {
     position: absolute;
