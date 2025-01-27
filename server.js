@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 // authentication
-const config = JSON.parse(fs.readFileSync("auth.json"));
+const config = JSON.parse(fs.readFileSync("debugAuth.json"));
 
 const clientId = config.clientId;
 const clientSecret = config.clientSecret;
