@@ -176,10 +176,9 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
+    padding-top: 0.5em;
     display: none;
-    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s;
 }
 #addModal #content #results div {
     display: flex;

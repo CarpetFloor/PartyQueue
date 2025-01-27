@@ -15,6 +15,7 @@ let searchResultsContainer = document.querySelector("#results");
 let searchButton = document.querySelector("#searchButton");
 searchButton.addEventListener("click", () => {
     searchResultsContainer.style.display = "flex";
+    addModalSearchResultsAnimation.animate();   
 })
 
 let addSongContainer = document.querySelector("#addSongContainer");
@@ -25,6 +26,7 @@ addSongContainer.addEventListener("click", () => {
 })
 
 addModalAnimation = {
+    elem: addModal,
     opacity: {
         init: 0,
         value: 0,
@@ -44,10 +46,10 @@ addModalAnimation = {
         let ref = addModalAnimation;
         
         ref.opacity.value = ref.opacity.init;
-        addModal.style.opacity = ref.opacity.value.toString();
+        ref.elem.style.opacity = ref.opacity.value.toString();
         
         ref.marginTop.value = ref.marginTop.init;
-        addModal.style.marginTop = ref.marginTop + "em";
+        ref.elem.style.marginTop = ref.marginTop + "em";
         
         ref.interval = window.setInterval(() => {
             ref.opacity.value += ref.opacity.change;
@@ -60,18 +62,18 @@ addModalAnimation = {
                 ref.interval = null;
             }
             
-            addModal.style.opacity = ref.opacity.value.toString();
-            addModal.style.marginTop = ref.marginTop.value + "em";
+            ref.elem.style.opacity = ref.opacity.value.toString();
+            ref.elem.style.marginTop = ref.marginTop.value + "em";
         }, ref.speed);
     },
     animateReverse: () => {
         let ref = addModalAnimation;
         
         ref.opacity.value = ref.opacity.total;
-        addModal.style.opacity = ref.opacity.value.toString();
+        ref.elem.style.opacity = ref.opacity.value.toString();
         
         ref.marginTop.value = ref.marginTop.total;
-        addModal.style.marginTop = ref.marginTop + "em";
+        ref.elem.style.marginTop = ref.marginTop + "em";
         
         ref.interval = window.setInterval(() => {
             ref.opacity.value -= ref.opacity.change;
@@ -82,11 +84,42 @@ addModalAnimation = {
                 ref.marginTop.value = ref.marginTop.init;
                 window.clearInterval(ref.interval);
                 ref.interval = null;
-                addModal.style.display = "none";
+                ref.elem.style.display = "none";
             }
             
-            addModal.style.opacity = ref.opacity.value.toString();
-            addModal.style.marginTop = ref.marginTop.value + "em";
+            ref.elem.style.opacity = ref.opacity.value.toString();
+            ref.elem.style.marginTop = ref.marginTop.value + "em";
+        }, ref.speed);
+    }
+}
+
+addModalSearchResultsAnimation = {
+    elem: searchResultsContainer,
+    maxHeight: {
+        init: 0,
+        value: 0,
+        change: 10,
+        total: 500
+    },
+    // ms between updates
+    speed: 60 / 1000,
+    interval: null,
+    animate: () => {
+        let ref = addModalSearchResultsAnimation;
+        
+        ref.maxHeight.value = ref.maxHeight.init;
+        ref.elem.style.maxHeight = ref.maxHeight.value + "px";
+        
+        ref.interval = window.setInterval(() => {
+            ref.maxHeight.value += ref.maxHeight.change;
+            
+            if(ref.maxHeight.value >= ref.maxHeight.total) {
+                ref.maxHeight.value = ref.maxHeight.total;
+                window.clearInterval(ref.interval);
+                ref.interval = null;
+            }
+            
+            ref.elem.style.maxHeight = ref.maxHeight.value + "px";
         }, ref.speed);
     }
 }
